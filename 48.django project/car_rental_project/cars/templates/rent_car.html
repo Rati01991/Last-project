@@ -1,0 +1,14 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>Rent {{ car.brand }} {{ car.model }}</title>
+</head>
+<body>
+    <h1>Rent {{ car.brand }} {{ car.model }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Rent Car</button>
+    </form>
+</body>
+</html>

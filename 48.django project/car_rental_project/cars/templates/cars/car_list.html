@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Cars for Rent</title>
+</head>
+<body>
+
+<h1>Available Cars for Rent</h1>
+
+<ul>
+    {% for car in cars %}
+    <li>
+        <h2>{{ car.brand }} {{ car.model }}</h2>
+        <p><strong>Release Year:</strong> {{ car.release_year }}</p>
+        <p><strong>Rental Price per Day:</strong> {{ car.rental_price_per_day }}</p>
+        <p><strong>Capacity:</strong> {{ car.capacity }}</p>
+        <p><strong>Transmission:</strong> {{ car.get_transmission_display }}</p>
+        <p><strong>Added By:</strong> {{ car.added_by }} (Phone: {{ car.phone_number }})</p>
+        <p><strong>City:</strong> {{ car.city }}</p>
+        {% if car.photo1 %}
+        <img src="{{ car.photo1.url }}" alt="Car Photo">
+        {% endif %}
+        <!-- Add more photos if needed -->
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
